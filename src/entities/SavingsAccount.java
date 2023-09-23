@@ -24,4 +24,11 @@ public class SavingsAccount extends Account {
     public void updateBalance() {
         balance += balance * interestRate;
     }
+
+    //o override serve para subescrever metodos herdados para terem comportamentos diferentes na classe que estpa usando o override
+    //por exemplo, por padrao o metodo withdraw desconta 5 reais da conta, mas em contas poupança nao deve descontar nada, como quero que esse metodo herdado tenha um comportamento diferenciado eu uso o override logo acima do metodo
+    @Override
+    public void withdraw(double amount){
+        balance -= amount;
+    }
 }
